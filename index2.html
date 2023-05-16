@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="dist/theme/custom.css">
+		<!-- <link rel="stylesheet" href="dist/theme/simple.css"> -->
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div id="slides" class="slides">
+
+				<!-- TITLE -->
+				<section class="slide-center" data-auto-animate>
+					<header>
+						<h1 data-id="1">Learning Transferable Visual Models From Natural Language Supervision</h1>
+						<h4 data-id="2">Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever</h4>
+						<h4>2020</h4>
+						<h4 class="bolder">Viktorie Valdmanová</h4>
+					</header>
+				</section>
+
+				<section class="slide-center" data-auto-animate>
+					<header>
+						<h1 data-id="1">
+							<span class="accent">C</span>ontrastive
+							<span class="accent">L</span>anguage-<span class="accent">I</span>mage
+							<span class="accent">P</span>re-training
+						</h1>
+						<h4  data-id="2">OpenAI</h4>
+						<h4 class="bolder">Viktorie Valdmanová</h4>
+					</header>
+				</section>
+
+				<!-- TERMS -->
+				<section>
+					<section class="slide">
+						<h3>Zero-shot learning</h3>
+						<div>
+							 <ul>
+								 <li>Refers to the study of generalizing to <span class="bolder">unseen object categories</span>.</li>
+								 <li>In this paper: <span class="bolder">generalization to unseen datasets</span>.</li>
+							</ul>
+						</div>
+					</section>
+
+					<section class="slide">
+						<h3>Bag-of-words</h3>
+						 <ul>
+							 <li>Representation that turns arbitrary text into fixed-length vectors by counting how many times each word appears.</li>
+						 </ul>
+					</section>
+				</section>
+
+				<!-- CONTRASTIVE LEARNING -->
+				<section>
+					<section data-auto-animate>
+						<h3 data-id="1" style="font-size: var(--r-heading2-size); font-weight: var(--r-heading2-font-weight);">Contrastive Learning</h3>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="1">Contrastive Learning</h3>
+						 <ul>
+							<li>Learns the general features of a dataset <span class="bolder">without labels</span> by recognizing which data points are <span class="bolder">similar or different</span>.</li>
+							<li>Similar examples have similar representations.</li>
+						</ul>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="1">Contrastive Learning</h3>
+						<img src="img/contrastive-operations.png"> <!-- https://www.v7labs.com/blog/contrastive-learning-guide -->
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="1">Self-supervised Contrastive Learning</h3>
+						<div class="center">
+							<img data-id="2" src="img/SSCL.png">
+						</div>
+					</section>
+
+					<section class="slide" data-auto-animate="">
+						<h3 data-id="1">Supervised Contrastive Learning</h3>
+						<div class="center">
+							<img data-id="2" src="img/SCL.png">
+						</div>
+					</section>
+				</section>
+
+				<!-- WHAT IS CLIP -->
+				<section class="slide-center">
+					<h2>CLIP</h2>
+				</section>
+
+				<section>
+					<section data-auto-animate>
+						<h3 data-id="1" style="font-size: var(--r-heading2-size); font-weight: var(--r-heading2-font-weight);">CLIP</h3>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="1">CLIP</h3>
+						<!-- Contrastive-learning with natural language supervision. -->
+						<div class="center">
+							<img src="img/contrastive-pre-training.png">
+						</div>
+					</section>
+				</section>
+
+				<!-- MOTIVATION -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="1">Motivation</h3>
+						<ul>
+							<li>Inspired by success in NLP.</li>
+							<li>Flagship NLP systems require little to no dataset-specific training data.</li>
+							<li>These results suggest that the supervision to modern pre-training methods within <span class="bolder">web-scale collections of text surpasses that of high-quality crowd-labeled NLP datasets</span>.</li>
+							<li>Could scalable pre-training methods which learn directly from web text result in a similar breakthrough in computer vision?</li>
+						</ul>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="1">Previous Work</h3>
+						<ol>
+							<li>Weakly-supervised pre-training</li>
+							<ul>
+								<li>Static softmax classifier for less than 2000 classes.</li>
+							</ul>
+							<li>VirTex, <span class="bolder">ConVIRT</span> - transformer-based language modeling, masked language modeling, and contrastive objectives to learn image representations from text.</li>
+						</ol>
+					</section>
+				</section>
+
+				<!-- DATASET -->
+				<section class="slide">
+					<h3>Dataset</h3>
+					<ol>
+						<li>MS-COCO +  Visual Genome + YFCC100M</li>
+						<ul>
+							<li>Filtered to images with titles and/or descriptions in English</li>
+							<li>15 million photos</li>
+						</ul>
+						<li>WIT (WebImageText)</li>
+						<ul>
+							<li>From a variety of publicly available sources on the Internet</li>
+							<li>400 million (image, text) pairs</li>
+						</ul>
+					</ol>
+				</section>
+
+				<!-- TRAINING -->
+				<section class="slide">
+					<h3>Dataset</h3>
+					<ol>
+						<li>Transformer</li>
+						<ul>
+							<li>Filtered to images with titles and/or descriptions in English</li>
+							<li>15 million photos</li>
+						</ul>
+						<li>WIT (WebImageText)</li>
+						<ul>
+							<li>From a variety of publicly available sources on the Internet</li>
+							<li>400 million (image, text) pairs</li>
+						</ul>
+					</ol>
+				</section>
+
+				<!-- DEMO -->
+				<section class="slide-center">
+					<h2>Demo?</h2>
+                </section>
+
+				<!-- METHOD -->
+				<section class="slide">
+					<h3>Method</h3>
+					<img src="img/contrastive-pre-training.png">
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
