@@ -15,28 +15,33 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  * GLOBAL STYLES
  *********************************************/
 /*:root {*/
-/*  --r-background-color: #fff;*/
-/*  --r-main-font: Lato, sans-serif;*/
-/*  --r-main-font-size: 40px;*/
+/*  --r-background-color: #f4faff;*/
+/*  --r-background-image: linear-gradient(175deg, #ffffff 0%, #fbecda 86%, #ffdcb2 100%);*/
+/*  --r-main-font: Roboto Slab, serif;*/
+/*  --r-main-font-size: 30px;*/
+/*  --r-main-font-weight: 400;*/
 /*  --r-main-color: #000;*/
 /*  --r-block-margin: 20px;*/
 /*  --r-heading-margin: 0 0 20px 0;*/
-/*  --r-heading-font: News Cycle, Impact, sans-serif;*/
+/*  --r-heading-font: Roboto Slab, serif;*/
 /*  --r-heading-color: #000;*/
 /*  --r-heading-line-height: 1.2;*/
 /*  --r-heading-letter-spacing: normal;*/
 /*  --r-heading-text-transform: none;*/
 /*  --r-heading-text-shadow: none;*/
-/*  --r-heading-font-weight: normal;*/
 /*  --r-heading1-text-shadow: none;*/
-/*  --r-heading1-size: 1.8rem;*/
-/*  --r-heading2-size: 1.4rem;*/
-/*  --r-heading3-size: 1.2rem;*/
-/*  --r-heading4-size: 1rem;*/
+/*  --r-heading1-size: 2rem;*/
+/*  --r-heading2-size: 1.85rem;*/
+/*  --r-heading3-size: 1.45rem;*/
+/*  --r-heading4-size: 1.25rem;*/
+/*  --r-heading1-font-weight: 900;*/
+/*  --r-heading2-font-weight: 700;*/
+/*  --r-heading3-font-weight: 500;*/
+/*  --r-heading4-font-weight: 400;*/
 /*  --r-code-font: monospace;*/
-/*  --r-link-color: #00008B;*/
-/*  --r-link-color-dark: #00003f;*/
-/*  --r-link-color-hover: #0000f1;*/
+/*  --r-link-color: #ed6200;*/
+/*  --r-link-color-dark: #9e4300;*/
+/*  --r-link-color-hover: #ff9243;*/
 /*  --r-selection-background-color: rgba(0, 0, 0, 0.99);*/
 /*  --r-selection-color: #fff;*/
 /*}*/

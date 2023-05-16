@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>CLIP</title>
 
 		<link rel="stylesheet" href="index.css">
 		<link rel="stylesheet" href="dist/theme/custom.css">
@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="dist/reveal.css">
 
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<script src="plugin/math/math.js"></script>
 	</head>
 
 	<body>
@@ -22,7 +24,7 @@
 			<div id="slides" class="slides">
 
 				<!-- TITLE -->
-				<section class="slide-center" data-auto-animate>
+				<section data-auto-animate>
 					<header>
 						<h1 data-id="1">Learning Transferable Visual Models From Natural Language Supervision</h1>
 						<h4 data-id="2">Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever</h4>
@@ -31,7 +33,7 @@
 					</header>
 				</section>
 
-				<section class="slide-center" data-auto-animate>
+				<section data-auto-animate>
 					<header>
 						<h1 data-id="1">
 							<span class="accent">C</span>ontrastive
@@ -43,56 +45,44 @@
 					</header>
 				</section>
 
-				<!-- TERMS -->
-				<section>
-					<section class="slide">
-						<h3>Zero-shot learning</h3>
-						<div>
-							 <ul>
-								 <li>Refers to the study of generalizing to <span class="bolder">unseen object categories</span>.</li>
-								 <li>In this paper: <span class="bolder">generalization to unseen datasets</span>.</li>
-							</ul>
-						</div>
-					</section>
-
-					<section class="slide">
-                    <h3>Bag-of-words</h3>
-                   	<div>
-						 <ul>
-							 <li>Representation that turns arbitrary text into fixed-length vectors by counting how many times each word appears.</li>
-						 </ul>
-					</div>
-                </section>
-				</section>
-
 				<!-- CONTRASTIVE LEARNING -->
 				<section>
 					<section data-auto-animate>
-						<h3 data-id="1" style="font-size: var(--r-heading2-size); font-weight: var(--r-heading2-font-weight);">Contrastive Learning</h3>
+						<h3 class="h2" data-id="CL-1">Contrastive Learning</h3>
 					</section>
 
-					<section class="slide" data-auto-animate>
-						<h3 data-id="1">Contrastive Learning</h3>
+					<!--<section class="slide" data-auto-animate>
+						<h3 data-id="CL-1">Contrastive Learning</h3>
 						 <ul>
 							<li>Learns the general features of a dataset <span class="bolder">without labels</span> by recognizing which data points are <span class="bolder">similar or different</span>.</li>
 							<li>Similar examples have similar representations.</li>
 						</ul>
-					</section>
+					</section>-->
 
 					<section class="slide" data-auto-animate>
-						<h3 data-id="1">Contrastive Learning</h3>
-						<img src="img/contrastive-operations.png"> <!-- https://www.v7labs.com/blog/contrastive-learning-guide -->
-					</section>
-
-					<section class="slide" data-auto-animate>
-						<h3 data-id="1">Self-supervised Contrastive Learning</h3>
+						<h3 data-id="CL-1">Contrastive Learning</h3>
 						<div class="center">
-							<img data-id="2" src="img/SSCL.png">
+							<img data-id="CL-2" src="img/CL-anchor.png"> <!-- https://www.v7labs.com/blog/contrastive-learning-guide -->
+						</div>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="CL-1">Contrastive Learning</h3>
+						<div class="center">
+							<img data-id="CL-2" src="img/CL-augments.png"> <!-- https://www.v7labs.com/blog/contrastive-learning-guide -->
+						</div>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="CL-1">Self-supervised Contrastive Learning</h3>
+						<div class="center">
+							<img data-id="CL-2" src="img/SSCL-0.png">
+							<img style="position: absolute" class="fragment" data-id="2" src="img/SSCL.png">
 						</div>
 					</section>
 
 					<section class="slide" data-auto-animate="">
-						<h3 data-id="1">Supervised Contrastive Learning</h3>
+						<h3 data-id="CL-1">Supervised Contrastive Learning</h3>
 						<div class="center">
 							<img data-id="2" src="img/SCL.png">
 						</div>
@@ -100,69 +90,313 @@
 				</section>
 
 				<!-- WHAT IS CLIP -->
-<!--				<section>-->
-<!--					<section data-auto-animate>-->
-<!--						<h3 data-id="1" style="font-size: var(&#45;&#45;r-heading2-size); font-weight: var(&#45;&#45;r-heading2-font-weight);">CLIP</h3>-->
-<!--					</section>-->
-
-<!--					<section class="slide" data-auto-animate>-->
-<!--						<h3 data-id="1">CLIP</h3>-->
-<!--						&lt;!&ndash; Contrastive-learning with natural language supervision. &ndash;&gt;-->
-<!--						<div class="center">-->
-<!--							<img src="img/contrastive-pre-training.png">-->
-<!--						</div>-->
-<!--					</section>-->
-<!--				</section>-->
-
-				<!-- DEMO -->
-				<section class="slide-center">
-					<h2>Demo?</h2>
-                </section>
-
-				<!-- MOTIVATION -->
-				<section>
-					<section class="slide" data-auto-animate>
-						<h3 data-id="1">Motivation</h3>
-						<ul>
-							<li>Flagship NLP systems (like GPT-3) require little to no dataset specific training data.</li>
-							<li>These results suggest that the supervision to modern pre-training methods within <span class="bolder">web-scale collections of text surpasses that of high-quality crowd-labeled NLP datasets</span>.</li>
-						</ul>
-					</section>
-
-					<section class="slide" data-auto-animate>
-						<h3 data-id="1">Previous Work</h3>
-						<ol>
-							<li>Weakly-supervised pre-training</li>
-							<ul>
-								<li>Static softmax classifier for less than 2000 classes.</li>
-							</ul>
-							<li>VirTex, <span class="bolder">ConVIRT</span> - transformer-based language modeling, masked language modeling, and contrastive objectives to learn image representations from text.</li>
-						</ol>
-					</section>
+				<section data-auto-animate>
+					<h3 class="h2" data-id="CLIP-1">CLIP</h3>
 				</section>
 
 				<!-- DATASET -->
-				<section class="slide">
-					<h3>Dataset</h3>
-					<ol>
-						<li>MS-COCO +  Visual Genome + YFCC100M</li>
-						<ul>
-							<li>Filtered to images with titles and/or descriptions in English</li>
-							<li>15 million photos</li>
-						</ul>
-						<li>WIT (WebImageText)</li>
-						<ul>
-							<li>From a variety of publicly available sources on the Internet</li>
-							<li>400 million (image, text) pairs</li>
-						</ul>
-					</ol>
+				<section class="slide" data-auto-animate>
+					<h3 data-id="CLIP-1">Dataset</h3>
+					<ul data-nesting="0">
+						<li>Uses natural language for contrastive supervision.</li>
+						<li>Datasets:</li>
+						<ol data-nesting="1">
+							<li>MS-COCO +  Visual Genome + YFCC100M</li>
+							<li class="no-bullet">15 million</li>
+							<li>WIT (WebImageText)</li>
+							<li class="no-bullet">400 million</li>
+						</ol>
+					</ul>
 				</section>
 
-				<!-- METHOD -->
-				<section class="slide">
-					<h3>Method</h3>
-					<img src="img/contrastive-pre-training.png">
+				<!-- TRAINING -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="CLIP-1">Training</h3>
+						<div class="center">
+							<img data-id="CLIP-img" src="img/CLIP-training.png">
+						</div>
+					</section>
+					<section class="slide" data-auto-animate>
+						<div>
+							<h3 data-id="CLIP-1">Training</h3>
+							<span>(Multi-Class N-pair loss)</span>
+						</div>
+						<div class="center">
+							\[\begin{aligned}
+								\mathcal{L}_\text{N-pair}(\mathbf{x}, \mathbf{x}^+, \{\mathbf{x}^-_i\}^{N-1}_{i=1})
+								&= \log\big(1 + \sum_{i=1}^{N-1} \exp(f(\mathbf{x})^\top f(\mathbf{x}^-_i) - f(\mathbf{x})^\top f(\mathbf{x}^+))\big) \\
+								&= -\log\frac{\exp(f(\mathbf{x})^\top f(\mathbf{x}^+))}{\exp(f(\mathbf{x})^\top f(\mathbf{x}^+)) + \sum_{i=1}^{N-1} \exp(f(\mathbf{x})^\top f(\mathbf{x}^-_i))}
+							\end{aligned}\]
+						</div>
+					</section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="CLIP-1">Training</h3>
+						<div class="center">
+							<img data-id="CLIP-img" src="img/CLIP-fig2.png">
+						</div>
+					</section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="CLIP-1">Training</h3>
+						<div class="center">
+							<img data-id="CLIP-img" src="img/CLIP-fig3.png">
+						</div>
+					</section>
 				</section>
+
+				<section class="slide" data-auto-animate>
+					<h3 data-id="CLIP-1">Zero-shot inference</h3>
+					<div class="center">
+						<img data-id="CLIP-img" src="img/CLIP-inference.png">
+					</div>
+				</section>
+
+				<!-- EXPERIMENTS -->
+				 <section>
+					<h3 class="h2" data-id="prompt-1">Experiments</h3>
+				</section>
+
+				<!-- VS PROBE -->
+				<section>
+					  <section class="slide" data-auto-animate>
+						<h3 data-id="probe-1">Zero-Shot CLIP vs. Baseline Linear Probe</h3>
+						 <div class="center">
+							 <img src="img/CLIP-fig5.png">
+						 </div>
+					</section>
+
+					 <section class="slide" data-auto-animate>
+						<h3 data-id="probe-1">CLIP vs. Baseline Linear Probe</h3>
+						 <div class="two-col">
+							 <div>
+								 <span>UCF101</span>
+								 <img src="img/UCF101.jpg">
+							 </div>
+							 <div>
+								 <span>Kinetics700</span>
+								 <img src="img/kinetics700.jpeg">
+							 </div>
+						 </div>
+					</section>
+
+					 <section class="slide" data-auto-animate>
+						<h3 data-id="probe-1">CLIP vs. Baseline Linear Probe</h3>
+						 <div class="two-col">
+							 <div>
+								 <span>STL10</span>
+								 <img src="img/stl10.png">
+							 </div>
+							 <div>
+								 <span>CIFAR10</span>
+								 <img src="img/cifar10.png">
+							 </div>
+						 </div>
+					</section>
+				 </section>
+
+				<!-- ZERO VS FEW SHOT-->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="6-1">Zero-shot CLIP vs. Few-shot Linear Probes</h3>
+						 <div class="center">
+							 <img src="img/CLIP-fig6.png">
+						 </div>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="6-1">Zero-shot CLIP vs. Few-shot Linear Probes</h3>
+						 <ul>
+							 <li>Natural language allows for visual concepts to be directly “communicated”.</li>
+							 <li>“Common” supervised learning must infer concepts indirectly from training.</li>
+						 </ul>
+					</section>
+				 </section>
+
+				<!-- ZERO-SHOT VS CLIP PROBE-->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="8-1">Zero-shot CLIP vs. Linear Probe CLIP</h3>
+						 <div class="center">
+							 <img src="img/CLIP-fig8.png">
+						 </div>
+					</section>
+				 </section>
+
+				<!-- TRANSFER EFFICIENCY -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="prompt-1">Zero-shot Transfer Efficiency</h3>
+						 <div class="center">
+							 <img src="img/CLIP-fig7.png">
+						 </div>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="prompt-1">Zero-shot vs. Few-shot</h3>
+						 <ul>
+							 <li>Natural language allows for visual concepts to be directly “communicated”.</li>
+							 <li>“Common” supervised learning must infer concepts indirectly from training.</li>
+						 </ul>
+					</section>
+				</section>
+
+				<!-- CLIP VS STATE-OF-THE-ART-->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="10-1">CLIP Probe vs. State-of-the-art (performance)</h3>
+						<div class="center">
+							<img data-id="10-2" src="img/CLIP-fig10.png">
+						</div>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="10-1">CLIP Probe vs. State-of-the-art (task-shift)</h3>
+						<div class="center">
+							<img data-id="10-2" src="img/CLIP-fig12.png">
+						</div>
+					</section>
+				 </section>
+
+				<!-- ROBUSTNESS  -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="13-1">CLIP vs. ImageNet models (distribution shift)</h3>
+						<div class="center">
+							<img data-id="13-2" src="img/CLIP-fig13.png">
+						</div>
+					</section>
+				</section>
+
+				<!-- PROMPTS -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="prompt-1">Prompt engineering + Ensebling</h3>
+						<div class="center">
+							<img src="img/CLIP-fig4.png">
+						</div>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="prompt-1">Prompt engineering + Ensebling</h3>
+						<ul>
+							<li>Usually the text is a full sentence describing the image in some way.</li>
+							<li>”A photo of a {label}, a type of pet / food / aircraft.”</li>
+							<li>”A satellite photo of a {label}.”</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- IMPACTS -->
+				<section class="center">
+					<h2>Impacts</h2>
+				</section>
+				
+				<!-- FAIR FACE -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="fairface-1">FairFace</h3>
+						<img src="img/CLIP-tab34.png">
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="fairface-1">FairFace</h3>
+						<span>”Even if a model has both higher accuracy and lower disparities in performance on different sub-groups, this does not mean it will have lower disparities in impact.”</span>
+					</section>
+				</section>
+
+				<!-- CLASS DESIGN -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="child-1">Class design</h3>
+						<div class="center">
+							<img src="img/CLIP-tab7.png">
+						</div>
+					</section>
+				</section>
+
+				<!-- CELEBA -->
+				<!--<section>
+					<section class="slide" data-auto-animate>
+						<h3>CellebA dataset</h3>
+						<ul>
+							<li></li>
+						</ul>
+					</section>
+				</section>-->
+
+				<!-- NEURONS -->
+				<section class="center">
+					<h2>Multimodal Neurons</h2>
+				</section>
+
+				<!-- TYPOGRAPHY ATTACK -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="attack-1">Typography Attack</h3>
+						<div class="center">
+							<div>
+								<img data-id="attack-2" src="img/attack-granny-smith.png">
+							</div>
+						</div>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="attack-1">Typography Attack</h3>
+						<div class="center">
+							<div>
+								<img data-id="attack-2" src="img/attack-granny-smith.png">
+								<img src="img/attack-rotary-phone.png">
+							</div>
+						</div>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<div>
+							<h3 data-id="attack-1">Stroop Effect</h3>
+							<span>("my favorite word, written in the color _____")</span>
+						</div>
+						<div class="center">
+							<div>
+								<img src="img/stroop-effect.png">
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- WORD EMBEDDINGS -->
+				<section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="words-1">Class design</h3>
+						<div>
+							<ol>
+								<li>Rastering words into images</li>
+								<li>Feeding these images into the model</li>
+								<li>Subtracting off the average over words</li>
+							</ol>
+							<code style="margin-top: 2rem;" class="center fragment">“King” - “Man” + “Woman” = “Queen”</code>
+						</div>
+					</section>
+				</section>
+
+
+				<!-- GH -->
+				<section>
+					<section data-auto-animate>
+						<h3 class="h2" data-id="gh-1">Try it out</h3>
+					</section>
+					<section data-auto-animate>
+						<h3 data-id="gh-1">Try it out</h3>
+						<div class="center">
+							<a href="https://github.com/openai/CLIP" target="_blank">https://github.com/openai/CLIP</a>
+						</div>
+					</section>
+				</section>
+
+				<!-- QUESTION -->
+				<section>
+					<h2>Discussion</h2>
+				</section>
+
 
 			</div>
 		</div>
@@ -178,7 +412,7 @@
 			Reveal.initialize({
 				hash: true,
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
 			});
 		</script>
 	</body>
