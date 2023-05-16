@@ -61,7 +61,8 @@ html {
   font-weight: var(--r-heading2-font-weight); }
 #slides img {
   max-height: min(18rem, 55vh);
-  object-fit: contain; }
+  object-fit: contain;
+  margin: 0; }
 #slides ul, #slides ol {
   --item-sep: 1rem; }
   #slides ul > li, #slides ol > li {

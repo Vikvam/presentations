@@ -26,7 +26,7 @@
 				<!-- TITLE -->
 				<section data-auto-animate>
 					<header>
-						<h1 data-id="1">Learning Transferable Visual Models From Natural Language Supervision</h1>
+						<h1 data-id="1"><a href="https://arxiv.org/abs/2103.00020" target="_blank">Learning Transferable Visual Models From Natural Language Supervision</a></h1>
 						<h4 data-id="2">Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever</h4>
 						<h4>2020</h4>
 						<h4 class="bolder">Viktorie Valdmanová</h4>
@@ -119,8 +119,7 @@
 					</section>
 					<section class="slide" data-auto-animate>
 						<div>
-							<h3 data-id="CLIP-1">Training</h3>
-							<span>(Multi-Class N-pair loss)</span>
+							<h3 data-id="CLIP-1">Multi-Class N-pair loss</h3>
 						</div>
 						<div class="center">
 							\[\begin{aligned}
@@ -144,6 +143,7 @@
 					</section>
 				</section>
 
+				<!-- INFERENCE -->
 				<section>
 					<section class="slide" data-auto-animate>
 						<h3 data-id="CLIP-1">Zero-shot inference</h3>
@@ -259,26 +259,41 @@
 				<!-- CLIP VS STATE-OF-THE-ART-->
 				<section>
 					<section class="slide" data-auto-animate>
-						<h3 data-id="10-1">CLIP Probe vs. State-of-the-art (performance)</h3>
+						<h3 data-id="10-1">CLIP Probe vs. State-of-the-art (efficiency)</h3>
 						<div class="center">
 							<img data-id="10-2" src="img/CLIP-fig10.png">
 						</div>
 					</section>
+				 </section>
 
+				<!-- ROBUSTNESS - TASK SHIFT -->
+				<section>
 					<section class="slide" data-auto-animate>
 						<h3 data-id="10-1">CLIP Probe vs. State-of-the-art (task-shift)</h3>
 						<div class="center">
 							<img data-id="10-2" src="img/CLIP-fig12.png">
 						</div>
 					</section>
-				 </section>
+				</section>
 
-				<!-- ROBUSTNESS  -->
+				<!-- ROBUSTNESS - DISTRIBUTION SHIFT -->
 				<section>
 					<section class="slide" data-auto-animate>
-						<h3 data-id="13-1">CLIP vs. ImageNet models (distribution shift)</h3>
+						<h3 data-id="13-1">Robustness to distribution shift</h3>
 						<div class="center">
 							<img data-id="13-2" src="img/CLIP-fig13.png">
+						</div>
+					</section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="13-1">Robustness to distribution shift</h3>
+						<div class="center">
+							<img data-id="13-2" src="img/CLIP-fig14.png">
+						</div>
+					</section>
+					<section class="slide" data-auto-animate>
+						<h3 data-id="13-1">Robustness to distribution shift</h3>
+						<div class="center">
+							<img data-id="13-2" src="img/CLIP-fig15.png">
 						</div>
 					</section>
 				</section>
@@ -298,6 +313,27 @@
 							<li>Usually the text is a full sentence describing the image in some way.</li>
 							<li>”A photo of a {label}, a type of pet / food / aircraft.”</li>
 							<li>”A satellite photo of a {label}.”</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- HUMANS -->
+				<section>
+					<section class="" data-auto-animate>
+						<h3 class="h2" data-id="human-1">Human experiments</h3>
+					</section>
+
+					<section class="slide" data-auto-animate>
+						<h3 data-id="human-1">Human experiments</h3>
+						<ul>
+							<li>”One possible concern was that the human workers were not sufficiently motivated in the zero-shot task. High human accuracy increased our trust in the human workers.”</li>
+							<li class="fragment" data-fragment-index="1">Gap between machine and human sample efficiency.</li>
+							<li class="fragment" data-fragment-index="1">Humans know what they don't know.</li>
+							<li class="fragment" data-fragment-index="2">Hardest problems for CLIP are also hard for humans.</li>
+							<ol class="fragment" data-fragment-index="2" data-nesting="1">
+								<li>Noise in the dataset (including mislabeled images).</li>
+								<li>Out of distribution images.</li>
+							</ol>
 						</ul>
 					</section>
 				</section>
@@ -322,10 +358,16 @@
 
 				<!-- CLASS DESIGN -->
 				<section>
+					<section data-auto-animate>
+						<h3 class="h2" data-id="child-1">Class design</h3>
+					</section>
 					<section class="slide" data-auto-animate>
 						<h3 data-id="child-1">Class design</h3>
 						<div class="center">
-							<img src="img/CLIP-tab7.png">
+							<div>
+								<img src="img/CLIP-tab7-0.png">
+								<img class="fragment" src="img/CLIP-tab7-1.png">
+							</div>
 						</div>
 					</section>
 				</section>
@@ -382,7 +424,7 @@
 				<!-- WORD EMBEDDINGS -->
 				<section>
 					<section class="slide" data-auto-animate>
-						<h3 data-id="words-1">Class design</h3>
+						<h3 data-id="words-1">Word embeddings</h3>
 						<div>
 							<ol>
 								<li>Rastering words into images</li>
