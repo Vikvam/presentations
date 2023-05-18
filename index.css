@@ -17,7 +17,7 @@
   --r-heading1-text-shadow: none;
   --r-heading1-size: 2rem;
   --r-heading2-size: 1.85rem;
-  --r-heading3-size: 1.45rem;
+  --r-heading3-size: 1.4rem;
   --r-heading4-size: 1.25rem;
   --r-heading1-font-weight: 900;
   --r-heading2-font-weight: 700;
@@ -32,7 +32,7 @@
   --r-selection-color: #fff; }
 
 html {
-  cursor: url("img/cursor.png"), auto; }
+  cursor: url("img/cursor_light.png"), auto; }
 
 #slides section.slide-center {
   display: grid !important;

@@ -116,6 +116,9 @@
 						<div class="center">
 							<img data-id="CLIP-img" src="img/CLIP-training.png">
 						</div>
+						<aside class="notes">
+							ViT + ResNet
+						</aside>
 					</section>
 					<section class="slide" data-auto-animate>
 						<div>
@@ -145,6 +148,10 @@
 
 				<!-- INFERENCE -->
 				<section>
+					<section class="" data-auto-animate>
+						<h3 data-id="CLIP-1">Inference</h3>
+					</section>
+
 					<section class="slide" data-auto-animate>
 						<h3 data-id="CLIP-1">Zero-shot inference</h3>
 						<div class="center">
@@ -179,34 +186,26 @@
 						 <div class="center">
 							 <img src="img/CLIP-fig5.png">
 						 </div>
+						  <aside class="notes">
+							  They speculate this is due to natural language providing wider supervision
+							  for visual concepts involving verbs, compared to the noun-centric object supervision in ImageNet.
+						  </aside>
 					</section>
 
 					 <section class="slide" data-auto-animate>
-						<h3 data-id="probe-1">CLIP vs. Baseline Linear Probe</h3>
-						 <div class="two-col">
-							 <div>
-								 <span>UCF101</span>
-								 <img src="img/UCF101.jpg">
-							 </div>
-							 <div>
-								 <span>Kinetics700</span>
-								 <img src="img/kinetics700.jpeg">
-							 </div>
+						<h3 data-id="probe-1">Linear Probe CLIP vs. Efficient Net</h3>
+						 <div class="center">
+							 <img src="img/CLIP-fig11.png">
 						 </div>
-					</section>
-
-					 <section class="slide" data-auto-animate>
-						<h3 data-id="probe-1">CLIP vs. Baseline Linear Probe</h3>
-						 <div class="two-col">
-							 <div>
-								 <span>STL10</span>
-								 <img src="img/stl10.png">
-							 </div>
-							 <div>
-								 <span>CIFAR10</span>
-								 <img src="img/cifar10.png">
-							 </div>
-						 </div>
+						 <aside class="notes">
+							 21 out of 27 datasets.
+							 <br>
+							 CLIP does much better on fine-grained car and traffic sign recognition (Stanford Cars and GTSRB).
+							<br>
+							 This may reflect a problem with overly narrow supervision in ImageNet.
+							 <br>
+							 Single label for all traffic and street signs.
+						  </aside>
 					</section>
 				 </section>
 
@@ -217,14 +216,12 @@
 						 <div class="center">
 							 <img src="img/CLIP-fig6.png">
 						 </div>
-					</section>
-
-					<section class="slide" data-auto-animate>
-						<h3 data-id="6-1">Zero-shot CLIP vs. Few-shot Linear Probes</h3>
-						 <ul>
-							 <li>Natural language allows for visual concepts to be directly “communicated”.</li>
-							 <li>“Common” supervised learning must infer concepts indirectly from training.</li>
-						 </ul>
+						<aside class="notes">
+							Figure 6.
+							<br>
+							Natural language allows for visual concepts to be directly “communicated”.
+							“Common” supervised learning must infer concepts indirectly from training.
+						</aside>
 					</section>
 				 </section>
 
@@ -235,6 +232,13 @@
 						 <div class="center">
 							 <img src="img/CLIP-fig8.png">
 						 </div>
+						<aside class="notes">
+							Strong correlation
+							<br>
+							Zero-shot performance mostly shifted 10 to 25 points lower
+							<br>
+							On only 5 datasets zero-shot performance approaches probe performance (≤3 point difference).
+						</aside>
 					</section>
 				 </section>
 
@@ -245,14 +249,19 @@
 						 <div class="center">
 							 <img src="img/CLIP-fig7.png">
 						 </div>
+						<aside class="notes">
+							Amount of examples (per class) a linear classifier on the same CLIP feature space requires to match zero-shot performance.
+							<br>
+							Log-linear interpolation of 1, 2, 4, 8, 16-shot and fully supervised results.
+							<br>
+							Performance varies from underperforming on 2 datasets to estimated 184 labeled examples per class.
+						</aside>
 					</section>
-
 					<section class="slide" data-auto-animate>
-						<h3 data-id="prompt-1">Zero-shot vs. Few-shot</h3>
-						 <ul>
-							 <li>Natural language allows for visual concepts to be directly “communicated”.</li>
-							 <li>“Common” supervised learning must infer concepts indirectly from training.</li>
-						 </ul>
+						<h3 data-id="prompt-1">Zero-shot Transfer Efficiency</h3>
+						<div class="center">
+							<img src="img/FER2013.jpg">
+						</div>
 					</section>
 				</section>
 
@@ -263,6 +272,15 @@
 						<div class="center">
 							<img data-id="10-2" src="img/CLIP-fig10.png">
 						</div>
+						<aside class="notes">
+							Geo-localization, OCR, facial emotion recognition, and action recognition.
+							<br>
+							All CLIP models outperform evaluated systems in compute efficiency.
+							<br>
+							Self-supervised systems do better on the broader evaluation suite.
+							<br>
+							→ Suggest to continuing to expand task diversity and coverage in order to better understand the “general” performance of systems.
+						</aside>
 					</section>
 				 </section>
 
@@ -273,6 +291,11 @@
 						<div class="center">
 							<img data-id="10-2" src="img/CLIP-fig12.png">
 						</div>
+						<aside class="notes">
+							Transfer scores of CLIP linear probes are higher than for models with similar ImageNet performance.
+							<br>
+							→ Suggest to continuing to expand task diversity and coverage in order to better understand the “general” performance of systems.
+						</aside>
 					</section>
 				</section>
 
@@ -289,6 +312,9 @@
 						<div class="center">
 							<img data-id="13-2" src="img/CLIP-fig14.png">
 						</div>
+						<aside class="notes">
+							Deep learning models are adept at finding correlations and patterns which hold across their training dataset and thus improve  in-distribution performance.
+						</aside>
 					</section>
 					<section class="slide" data-auto-animate>
 						<h3 data-id="13-1">Robustness to distribution shift</h3>
@@ -302,18 +328,19 @@
 				<section>
 					<section class="slide" data-auto-animate>
 						<h3 data-id="prompt-1">Prompt engineering + Ensebling</h3>
-						<div class="center">
-							<img src="img/CLIP-fig4.png">
-						</div>
+						<ul>
+							<li>Usually the text is a full sentence describing the image in some way.</li>
+							<li>”A photo of a {label}, a type of pet / food / aircraft.”</li>
+							<li class="no-bullet">”A satellite photo of a {label}.”</li>
+							<li>”A photo of a small {label}.” + ”A photo of a big {label}.”</li>
+						</ul>
 					</section>
 
 					<section class="slide" data-auto-animate>
 						<h3 data-id="prompt-1">Prompt engineering + Ensebling</h3>
-						<ul>
-							<li>Usually the text is a full sentence describing the image in some way.</li>
-							<li>”A photo of a {label}, a type of pet / food / aircraft.”</li>
-							<li>”A satellite photo of a {label}.”</li>
-						</ul>
+						<div class="center">
+							<img src="img/CLIP-fig4.png">
+						</div>
 					</section>
 				</section>
 
@@ -384,7 +411,7 @@
 
 				<!-- NEURONS -->
 				<section class="center">
-					<h2>Multimodal Neurons</h2>
+					<h2><a href="https://distill.pub/2021/multimodal-neurons/" target="_blank">Multimodal Neurons</a></h2>
 				</section>
 
 				<!-- TYPOGRAPHY ATTACK -->
@@ -405,6 +432,12 @@
 								<img data-id="attack-2" src="img/attack-granny-smith.png">
 								<img src="img/attack-rotary-phone.png">
 							</div>
+						</div>
+					</section>
+
+					<section class="" data-auto-animate>
+						<div>
+							<h3 data-id="attack-1">Stroop Effect</h3>
 						</div>
 					</section>
 
